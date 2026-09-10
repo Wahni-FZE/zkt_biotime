@@ -166,6 +166,14 @@ app_license = "mit"
 # 	],
 # }
 
+scheduler_events = {
+    "cron": {
+        "0 * * * *": [
+            "zkt_biotime.zkt_biotime.doctype.biotime_settings.biotime_settings.scheduled_sync"
+        ],
+    },
+}
+
 # Testing
 # -------
 

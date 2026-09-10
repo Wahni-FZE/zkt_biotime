@@ -1,0 +1,144 @@
+{
+ "actions": [],
+ "creation": "2026-09-10 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "connection_section",
+  "enabled",
+  "server_url",
+  "column_break_conn",
+  "username",
+  "password",
+  "sync_section",
+  "edit_last_sync_time",
+  "last_sync_time",
+  "column_break_sync",
+  "sync_now",
+  "manual_fetch_section",
+  "from_date",
+  "fetch_transactions",
+  "column_break_manual",
+  "to_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "connection_section",
+   "fieldtype": "Section Break",
+   "label": "BioTime Connection"
+  },
+  {
+   "default": "0",
+   "description": "Fetch checkins automatically every hour",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable Scheduled Sync"
+  },
+  {
+   "description": "e.g. http://192.168.1.10:8081",
+   "fieldname": "server_url",
+   "fieldtype": "Data",
+   "label": "Server URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_conn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sync_section",
+   "fieldtype": "Section Break",
+   "label": "Sync"
+  },
+  {
+   "default": "0",
+   "fieldname": "edit_last_sync_time",
+   "fieldtype": "Check",
+   "label": "Edit Last Sync Time"
+  },
+  {
+   "description": "Next sync fetches entries from 1 hour before this time",
+   "fieldname": "last_sync_time",
+   "fieldtype": "Datetime",
+   "label": "Last Sync Time",
+   "read_only_depends_on": "eval:!doc.edit_last_sync_time"
+  },
+  {
+   "fieldname": "column_break_sync",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Fetch all entries since Last Sync Time",
+   "fieldname": "sync_now",
+   "fieldtype": "Button",
+   "label": "Sync Now"
+  },
+  {
+   "description": "Fetch entries between From Date and To Date. Already fetched entries are skipped.",
+   "fieldname": "manual_fetch_section",
+   "fieldtype": "Section Break",
+   "label": "Manual Fetch"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date"
+  },
+  {
+   "fieldname": "fetch_transactions",
+   "fieldtype": "Button",
+   "label": "Fetch Transactions"
+  },
+  {
+   "fieldname": "column_break_manual",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-09-10 19:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Zkt Biotime",
+ "name": "BioTime Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "HR Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
